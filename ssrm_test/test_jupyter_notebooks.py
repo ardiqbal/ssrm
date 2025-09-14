@@ -30,7 +30,7 @@ JUPYTER_NOTEBOOK_TESTING_OUTPUT_DIR: Union[bytes, str] = os.path.join(
 @pytest.fixture
 def generate_papermill_output_dir(tmpdir_factory: object) -> object:
     """Ensures directory exists for output notebooks. This is one of the
-       required parameters for papermill.execute_notebook()
+    required parameters for papermill.execute_notebook()
     """
     try:
         os.makedirs(JUPYTER_NOTEBOOK_TESTING_OUTPUT_DIR, exist_ok=True)

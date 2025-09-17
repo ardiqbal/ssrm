@@ -21,7 +21,7 @@ pip:
 	python -m pip install --upgrade pip
 
 poetry:
-	pip install poetry
+	pip install poetry==2.2.0
 
 install: pip poetry ## installs dependencies for external users.
 	poetry install --no-dev
@@ -59,7 +59,7 @@ docs:  ## builds docs.
 	@mkdir -p $(DOCS)/build/html/logos && cp logos/*.png $(DOCS)/build/html/logos
 
 flake:  ## runs code linter.
-	$(RUN) flake8
+	$(RUN) flake8 --exclude venv
 
 isort:
 	$(RUN) pre-commit run isort --all-files

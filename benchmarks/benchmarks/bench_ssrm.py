@@ -2,6 +2,7 @@ from functools import reduce
 
 import numpy as np
 from scipy.stats import multinomial
+
 from ssrm_test import ssrm_test as st
 
 

@@ -1,6 +1,5 @@
 """Defines constants."""
 
-
 LOG_MARGINAL_LIKELIHOOD_M0 = "log_marginal_likelihood_M0"
 LOG_MARGINAL_LIKELIHOOD_M1 = "log_marginal_likelihood_M1"
 POSTERIOR_PROBABILITY = "posterior_probability"

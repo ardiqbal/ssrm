@@ -108,9 +108,11 @@ def accumulator(acc: dict, new_data_point: np.ndarray) -> dict:
         const.P_VALUE: p_value,
         const.POSTERIOR_PROBABILITY: post_prob,
         const.LOG_MARGINAL_LIKELIHOOD_M1: log_marginal_likelihood_M1,
-        const.LOG_MARGINAL_LIKELIHOOD_M0: log_marginal_likelihood_M0
-        if new_data_point.sum() > 0
-        else acc[const.LOG_MARGINAL_LIKELIHOOD_M0],
+        const.LOG_MARGINAL_LIKELIHOOD_M0: (
+            log_marginal_likelihood_M0
+            if new_data_point.sum() > 0
+            else acc[const.LOG_MARGINAL_LIKELIHOOD_M0]
+        ),
         const.POSTERIOR_M1: acc[const.POSTERIOR_M1] + new_data_point,
         const.POSTERIOR_M0: acc[const.POSTERIOR_M0],
     }
@@ -132,9 +134,9 @@ def posterior_probability(posterior_odds: float) -> float:
     float
         The posterior probability of an SRM.
     """
-    if posterior_odds == np.Inf:
+    if posterior_odds == np.inf:
         return 1
-    elif posterior_odds == -np.Inf:
+    elif posterior_odds == -np.inf:
         return 0
     else:
         return posterior_odds / (1.0 + posterior_odds)

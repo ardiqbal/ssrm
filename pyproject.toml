@@ -9,7 +9,7 @@ license = {text = "Apache-2.0"}
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "numpy (~=2.2.6)",
+    "numpy (>=2.1)",
     "scipy (~=1.15.3)",
     "toolz (~=1.0.0)"
 ]
